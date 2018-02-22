@@ -10,7 +10,7 @@ var Jokes = Backbone.Collection.extend({
 var jokesList = new Jokes();
 
 jokesList.fetch().then(function(response){
-	_.each(response.where({type: 'knock-knock'}), function(result){
+	_.each(jokesList.where({type: 'knock-knock'}), function(result){
 		console.log(result.get('setup'));
 		console.log(result.get('punchline'));
 	})
